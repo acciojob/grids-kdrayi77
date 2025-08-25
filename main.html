@@ -22,12 +22,16 @@
       border: 2px dotted rgb(38, 38, 43);
     }
     /* Specific backgrounds */
-    #row1col1 { background-color: teal; }
-    #row1col2 { background-color: thistle; }
-    #row2col1 { background-color: tomato; }
-    #row2col2 { background-color: turquoise; }
-    #row3col1 { background-color: violet; }
-    #row3col2 { background-color: yellowgreen; }
+    .row:nth-child(1) .col:nth-child(1) { background-color: teal; }
+    .row:nth-child(1) .col:nth-child(2) { background-color: thistle; }
+
+    .row:nth-child(2) .col:nth-child(1) { background-color: tomato; }
+    .row:nth-child(2) .col:nth-child(2) { background-color: black; }
+    .row:nth-child(2) .col:nth-child(3) { background-color: turquoise; }
+
+    .row:nth-child(3) .col:nth-child(1) { background-color: violet; }
+    .row:nth-child(3) .col:nth-child(2) { background-color: yellowgreen; }
+    .row:nth-child(3) .col:nth-child(3) { background-color: black; }
   </style>
 </head>
 <body>
@@ -36,20 +40,22 @@
 
     <!-- Row 1 -->
     <div class="row">
-      <div id="row1col1" class="col-md-4 col-sm-6 col">Row1 col1</div>
-      <div id="row1col2" class="col-md-8 col-sm-6 col">Row1 col2</div>
+      <div class="col-md-4 col-sm-6 col">Row1 col1</div>
+      <div class="col-md-8 col-sm-6 col">Row1 col2</div>
     </div>
 
     <!-- Row 2 -->
     <div class="row">
-      <div id="row2col1" class="col-md-4 offset-md-2 col-sm-6 col">Row2 col1</div>
-      <div id="row2col2" class="col-md-4 col-sm-6 col">Row2 col2</div>
+      <div class="col-md-4 offset-md-2 col-sm-6 col">Row2 col1</div>
+      <div class="col-md-2 d-none d-md-block col"></div> <!-- Black space on md -->
+      <div class="col-md-4 col-sm-6 col">Row2 col2</div>
     </div>
 
     <!-- Row 3 -->
     <div class="row justify-content-center">
-      <div id="row3col1" class="col-md-4 col-sm-5 col">Row3 col1</div>
-      <div id="row3col2" class="col-md-4 col-sm-5 col">Row3 col2</div>
+      <div class="col-md-4 col-sm-5 col">Row3 col1</div>
+      <div class="col-md-4 col-sm-5 col">Row3 col2</div>
+      <div class="col-md-2 d-none "></div> <!-- Black space -->
     </div>
 
   </div>
